@@ -1,4 +1,4 @@
-let count=0;
+ let count=0;
 let HighestScore=0;
 
 
@@ -12,12 +12,24 @@ let level = 0;
 
 let heading = document.querySelector("h2");
 
-document.addEventListener("keypress", function() {
-    if(started == false) {
+function startGame() {
+    if (started == false) {
         console.log("game has started");
         started = true;
+        levelUp();
+    }
+}
 
-        levelUp() ;
+// 1. Laptop support: starts when a keyboard key is pressed
+document.addEventListener("keypress", function() {
+    startGame();
+});
+
+// 2. Mobile & Laptop mouse support: starts when the screen is tapped or clicked
+document.addEventListener("click", function(event) {
+    // Only start if the user clicks the background (not a colored box)
+    if (!event.target.classList.contains("btn")) {
+        startGame();
     }
 });
 
