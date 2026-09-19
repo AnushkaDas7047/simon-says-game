@@ -1,5 +1,6 @@
-body{
+ody{
     text-align: center;
+    background-color: rgb(245, 233, 196);
 }
 .btn-container {
     display : flex;
@@ -30,4 +31,17 @@ body{
 }
 .user-flash {
     background-color: green;
+}
+
+h1 {
+    background-color: lightblue;
+    border: 5px solid black;
+    padding: 20px 50px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+h3 {
+    color : white ;
+    font-size : 2rem;
 }
