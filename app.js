@@ -1,4 +1,4 @@
- let count=0;
+let count=0;
 let HighestScore=0;
 
 
@@ -82,7 +82,7 @@ function checkAns(idx) {
         heading.innerHTML = `Game over : <b> your score was ${level} </b> <br> your Highest score was ${HighestScore} <br> Press any key to start the game again`;
         document.querySelector("body").style.backgroundColor="red";
         setTimeout( function() {
-            document.querySelector("body").style.backgroundColor="white";
+            document.querySelector("body").style.backgroundColor="rgb(245, 233, 196)";
             
         } , 150);
         reset();
