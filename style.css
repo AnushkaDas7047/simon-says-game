@@ -1,6 +1,7 @@
 body{
     text-align: center;
     background-color: rgb(245, 233, 196);
+    overflow: auto;
 }
 .btn-container {
     display: grid;
@@ -60,67 +61,12 @@ h1 {
 h3 {
     color : white ;
     font-size : 2rem;
-}body{
-    text-align: center;
-    background-color: rgb(245, 233, 196);
 }
-.btn-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Forces exactly 2 columns side-by-side */
-    justify-items: center;                 /* Centers each button in its grid cell */
-    max-width: 540px;                      /* Matches the layout size of your desktop screen */
-    margin: 0 auto;                        /* Centers the grid container on the screen */
-}
-.btn{
-    height : 200px;
-    width:200px;
-    border-radius:20%;
-    border:10px solid black ;
-    margin:2.5rem;
-    box-sizing: border-box;
-
-}
-@media (max-width: 600px) {
-    .btn-container {
-        max-width: 90%;                    /* Keeps the grid constrained to the mobile screen width */
-    }
-    
-    .btn {
-        width: 35vw;                       /* Uniformly scales width down to fit side-by-side */
-        height: 35vw;                      /* Uniformly scales height to stay square */
-        margin: 4vw;                       /* Scales down the 2.5rem margins proportionally */
-        border-width: 6px;                 /* Slightly scales down the border thickness for mobile screens */
-    }
-}
-.red {
-    background-color: rgb(250, 107, 200);
-}
-.green {
-    background-color: rgb(0, 128, 98);
-}
-.yellow {
-    background-color: rgb(255, 145, 0);
-}
-.purple {
-    background-color: rgb(85, 177, 213);;
-}
-.flash {
-    background-color: aliceblue;
-}
-.user-flash {
-    background-color: green;
-}
-
-h1 {
-    background-color: lightblue;
-    border: 5px solid black;
-    padding: 20px 50px;
-    border-radius: 30px;
-    display: inline-block;
-}
-
-h3 {
-    color : white ;
-    font-size : 2rem;
+.strBtn{
+    background-color: rgb(141, 233, 141);
+    height: 4rem;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 1.5rem;
 }
 
