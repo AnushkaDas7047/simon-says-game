@@ -1,5 +1,7 @@
 let count=0;
 let HighestScore=0;
+let body = document.querySelector("body");
+let strBtn = document.querySelector(".strBtn");
 
 
 let gamesq=[];
@@ -12,26 +14,37 @@ let level = 0;
 
 let heading = document.querySelector("h2");
 
+// document.addEventListener("keypress", function() {
+//     if(started == false) {
+//         console.log("game has started");
+//         started = true;
+
+//         levelUp() ;
+//     }
+// });
+// Create a reusable start function
 function startGame() {
     if (started == false) {
         console.log("game has started");
         started = true;
+        strBtn.style.pointerEvents = "none"; // This stops the button from being hoverable or clickable during the game
         levelUp();
     }
 }
 
-// 1. Laptop support: starts when a keyboard key is pressed
-document.addEventListener("keypress", function() {
-    startGame();
-});
+// // 1. Laptop support: starts when a keyboard key is pressed
+// document.addEventListener("keypress",startGame);
 
-// 2. Mobile & Laptop mouse support: starts when the screen is tapped or clicked
-document.addEventListener("click", function(event) {
-    // Only start if the user clicks the background (not a colored box)
-    if (!event.target.classList.contains("btn")) {
-        startGame();
-    }
-});
+// // 2. Mobile & Laptop mouse support: starts when the screen is tapped or clicked
+// document.addEventListener("click", function(event) {
+//     // Only start if the user clicks the background (not a colored box)
+//     if (!event.target.classList.contains("btn")) {
+//         startGame();
+//     }
+// });
+strBtn.addEventListener("click" , startGame);
+
+
 
 function gameFlash(btn) {
     btn.classList.add("flash");
@@ -49,7 +62,7 @@ function userFlash(btn) {
 function levelUp() {
     level++;
     usersq=[];
-    heading.innerText=`Level ${level}` ;
+    strBtn.innerText=`Level ${level}` ;
     let randIdx= Math.floor(Math.random() * 3) ;
     let randColor = btns[randIdx];
     let randBtn = document.querySelector(`.${randColor}`);
@@ -79,10 +92,13 @@ function checkAns(idx) {
             
             }
         }
-        heading.innerHTML = `Game over : <b> your score was ${level} </b> <br> your Highest score was ${HighestScore} <br> Press any key to start the game again`;
+        heading.innerHTML = `Game over : <b> your score was ${level} </b> <br> your Highest score was ${HighestScore}`;
+        // Reset the button back to the start state
+        
         document.querySelector("body").style.backgroundColor="red";
         setTimeout( function() {
             document.querySelector("body").style.backgroundColor="rgb(245, 233, 196)";
+
             
         } , 150);
         reset();
@@ -112,6 +128,10 @@ function reset() {
     gamesq = [];
     usersq = [];
     level = 0; 
+    // Reset the button back to the start state
+    strBtn.innerText = "Start The Game";
+    strBtn.style.pointerEvents = "auto"; 
+    
 }
 
 
